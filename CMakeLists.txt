@@ -8,11 +8,11 @@ find_package(CURL REQUIRED)
 
 include_directories(include)
 
-add_executable(cpp_load
+add_executable(cpp_load_runner
     src/main.cpp
     src/Metrics.cpp
     src/Worker.cpp
     src/LoadTester.cpp
 )
 
-target_link_libraries(cpp_load CURL::libcurl)
+target_link_libraries(cpp_load_runner CURL::libcurl)
