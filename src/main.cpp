@@ -17,6 +17,9 @@ int main(int argc, char **argv)
         {"rps", required_argument, 0, 'r'},
         {"duration", required_argument, 0, 'd'},
         {"timeout-ms", required_argument, 0, 't'},
+        {"method", required_argument, 0, 'm'},
+        {"data", required_argument, 0, 'b'},
+        {"header", required_argument, 0, 'H'},
         {0, 0, 0, 0}};
     int opt, idx = 0;
     while ((opt = getopt_long(argc, argv, "u:c:r:d:t:", long_options, &idx)) != -1)
@@ -38,6 +41,16 @@ int main(int argc, char **argv)
         case 't':
             cfg.timeout_ms = std::max(1L, atol(optarg));
             break;
+        case 'm':
+            cfg.method = optarg;
+            break;
+        case 'b':
+            cfg.body = optarg;
+            break;
+        case 'H':
+            cfg.headers.push_back(optarg);
+            break;
+
         default:
             usage(argv[0]);
             return 1;
