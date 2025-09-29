@@ -51,7 +51,7 @@ make -j
 ### Run
 
 ``` bash
-./cload --url https://example.com --concurrency 4 --rps 100 --duration 10
+./cpp_load_runner --url https://example.com --concurrency 4 --rps 100 --duration 10
 ```
 
 ------------------------------------------------------------------------
@@ -83,16 +83,16 @@ make -j
 
 ``` bash
 # Simple GET
-./cload --url https://api.example.com/items
+./cpp_load_runner --url https://api.example.com/items
 
 # POST JSON
-./cload --url https://api.example.com/items         --method POST         --header "Content-Type: application/json"         --data '{"name":"test"}'
+./cpp_load_runner --url https://api.example.com/items         --method POST         --header "Content-Type: application/json"         --data '{"name":"test"}'
 
 # PUT with JSON body
-./cload --url https://api.example.com/items/42         --method PUT         --header "Content-Type: application/json"         --data '{"name":"updated"}'
+./cpp_load_runner --url https://api.example.com/items/42         --method PUT         --header "Content-Type: application/json"         --data '{"name":"updated"}'
 
 # DELETE
-./cload --url https://api.example.com/items/42 --method DELETE
+./cpp_load_runner --url https://api.example.com/items/42 --method DELETE
 ```
 
 ------------------------------------------------------------------------
